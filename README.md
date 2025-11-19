@@ -29,8 +29,8 @@ This project shows how to **manually scale** your AWS environment by:
 
 ## 🏗️ Architecture Diagram :-
 
-User → Application Load Balancer → Target Group → Multiple EC2 Instances
-             |                                               |
+- User → Application Load Balancer → Target Group → Multiple EC2 Instances
+             |                                               |            
              └────────── Manual Scaling using AMI ───────────┘
              
 

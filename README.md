@@ -231,13 +231,13 @@ manual-scaling-project/
 Below are some important screenshots of the project:
 
 | My-AMI | Load-Balancer |
-|-------------|--------------|
+|------------------|-------------------|
 | <img src="Images/AMI.png" width="200px"> | <img src="Images/Load Balancer.png" width="200px">
 | Instance | Target-Group |
 | <img src="Images/My Servers.png" width="200px"> | <img src="Images/Targate Group.png" width="200px">
 
-### 🎬 Output Preview
-<img src="Images/Result OF ALB.mp4" width="600px">
+### 🎥 Output Video
+<video src="./Images/Result OF ALB.mp4" width="600" controls></video>
 
 > 📝 *Tip:* Create a folder named **`Images/`** in your repo and upload all your images there.  
 

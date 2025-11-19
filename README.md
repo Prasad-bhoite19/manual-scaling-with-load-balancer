@@ -29,7 +29,10 @@ This project shows how to **manually scale** your AWS environment by:
 
 ## 🏗️ Architecture Diagram :-
 
-User → Application Load Balancer → Target Group → Multiple EC2 Instances (via AMI)
+User → Application Load Balancer → Target Group → Multiple EC2 Instances
+             |                                               |
+             └────────── Manual Scaling using AMI ───────────┘
+             
 
 Each EC2 instance hosts a simple web page (via Nginx).  
 The Load Balancer routes traffic between them for better performance and reliability.
@@ -164,7 +167,7 @@ aws ec2 terminate-instances --instance-ids <instance-id>
 - Deploy a dynamic web app instead of static HTML
 - Add multi-region deployment for global availability
 
-## 📸 Folder Structure :-
+## 📁 Folder Structure :-
 ``` 
 manual-scaling-project/
 │
@@ -207,6 +210,11 @@ Below are some important screenshots of the project:
 > 📝 *Tip:* Create a folder named **`Images/`** in your repo and upload all your images there.  
 
 -----
+
+## 🙌 Acknowledgements
+
+Special thanks to AWS Documentation, Cloud Community, and Open Source resources.
+
 
 ## 🧑‍💻 Author :-
 

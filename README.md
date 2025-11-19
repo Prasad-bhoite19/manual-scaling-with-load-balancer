@@ -232,11 +232,11 @@ Below are some important screenshots of the project:
 
 | Screenshot | Description |
 |-----------|-------------|
-| <img src="Images/AMI.png" width="250"> | **AMI** |
-| <img src="Images/Load Balancer.png" width="250"> | **Load-Balancer** |
-| <img src="Images/My Servers.png" width="250"> | **Instance** |
-| <img src="Images/Result OF ALB.mp4" width="250"> | **Output** |
-| <img src="Images/Targate Group.png" width="250"> | **Targate-Group** |
+| <img src="Images/AMI.png" width="250"> |    **AMI**  |
+| <img src="Images/Load Balancer.png" width="250"> |   **Load-Balancer**   |
+| <img src="Images/My Servers.png" width="250"> |   **Instance**   |
+| <img src="Images/Targate Group.png" width="250"> |   **Targate-Group**   |
+| <img src="Video In Images Folder"> |   **Output**   |
 
 
 > 📝 *Tip:* Create a folder named **`Images/`** in your repo and upload all your images there.  

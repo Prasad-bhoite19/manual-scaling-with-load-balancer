@@ -4,7 +4,7 @@ A **simple, powerful, and beginner-friendly** cloud project demonstrating how to
 
 ---
 
-## 🧭 Project Overview
+## 🧭 Project Overview :-
 
 This project shows how to **manually scale** your AWS environment by:
 - Launching multiple **EC2 instances** running Nginx.
@@ -14,7 +14,7 @@ This project shows how to **manually scale** your AWS environment by:
 
 ---
 
-## ⚙️ Tech Stack
+## ⚙️ Tech Stack :-
 
 | Component | Description |
 |------------|-------------|
@@ -27,7 +27,7 @@ This project shows how to **manually scale** your AWS environment by:
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Architecture Diagram :-
 
 User → Application Load Balancer → Target Group → Multiple EC2 Instances (via AMI)
 
@@ -36,68 +36,131 @@ The Load Balancer routes traffic between them for better performance and reliabi
 
 ---
 
-## 🚀 Step-by-Step Setup
+## 🚀 Step-by-Step Setup :-
 
-### 1️⃣ Launch Base EC2 Instance
-```
-1. Go to **AWS EC2 Console** → Launch an instance.
-2. Choose **Amazon ubuntu 2 AMI**.
-3. Select instance type (e.g., `t2.micro`).
-4. Configure security group:
-   - **Inbound:** HTTP (80), SSH (22)
-   - **Outbound:** All traffic
-5. Launch and connect via SSH.
+### 1️⃣ Launch Base EC2 Instance :-
 
----
-```
-### 2️⃣ Install and Configure Nginx
+***Go to AWS EC2 Console → Launch an instance.***
+
+***Choose Amazon Ubuntu 2 AMI.***
+
+***Select instance type (e.g., t2.micro).***
+
+***Configure security group:***
+
+***Inbound: HTTP (80), SSH (22)***
+
+***Outbound: All traffic***
+
+***Launch and connect via SSH.***
+
+### 2️⃣ Install and Configure Nginx :-
 ```
 sudo apt update -y
 sudo apt install nginx -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
-echo "<h1>Welcome to Auto-Scaling server 1....!</h1>" | sudo tee /usr/share/nginx/html/index.
+echo "<h1>Welcome to Auto-Scaling server 1....!</h1>" | sudo tee /usr/share/nginx/html/index.html
 Check your instance public IP in the browser — you should see the message above.
+
 ```
-### 3️⃣ Create a Custom AMI
+### 3️⃣ Create a Custom AMI :-
+
+***Once your base instance is ready:***
+***Go to EC2 → Instances → Select instance → Actions → Image → Create Image.***
+***Give a name (e.g., My-AMI).***
+***Wait for the AMI to be created (check under AMIs in the console).***
+***This AMI will be used to quickly launch multiple identical EC2 instances.***
+
+### 4️⃣ Launch More Instances from AMI :-
+
+***Go to AMIs → Select your AMI → Click Launch instance from image.***
+***Create 2–3 instances from the same AMI.***
+***Update the Nginx message on each to differentiate them:***
+***echo "<h1>Welcome to Auto-Scaling Server 2....!</h1>" | sudo nano /var/www/html/index.html***
+
+
+### 5️⃣ Create a Target Group :-
+
+***Navigate to EC2 → Target Groups → Create target group.***
+***Choose Instances as target type.***
+***Name it My-TG.***
+***Protocol: HTTP, Port: 80***
+***Register your running EC2 instances under this Target Group.***
+
+
+### 6️⃣ Create an Application Load Balancer (ALB) :-
+
+***Go to Load Balancers → Create Load Balancer → Application Load Balancer.***
+***Choose Internet-facing and select at least two Availability Zones.***
+***Create or select a Security Group that allows HTTP (port 80).***
+***Attach the Target Group you created earlier.***
+***Once created, note the DNS name of the ALB.***
+
+### 7️⃣ Test Manual Scaling :-
+
+***Open the ALB DNS name in your browser.***
+***Refresh the page multiple times — you’ll see responses from different EC2 instances (Instance 1, 2, etc.).***
+***This confirms traffic load balancing.***
+***You can manually add or remove instances in the Target Group to scale up or down.***
+
+---
+
+## 🐧 Linux Commands Used :-
+
+1] Update and upgrade packages :-
 ```
-Once your base instance is ready:
-Go to EC2 → Instances → Select instance → Actions → Image → Create Image.
-Give a name (e.g., My-AMI).
-Wait for the AMI to be created (check under AMIs in the console).
-This AMI will be used to quickly launch multiple identical EC2 instances.
+sudo apt update -y
+sudo apt upgrade -y
 ```
-### 4️⃣ Launch More Instances from AMI
+2] Install Nginx :-
 ```
-Go to AMIs → Select your AMI → Click Launch instance from image.
-Create 2–3 instances from the same AMI.
-Update the Nginx message on each to differentiate them :
-echo "<h1>Welcome to Auto-Scaling Server 2....!</h1>" | sudo nano /var/www/html/index.html
+sudo apt install nginx -y
 ```
-### 5️⃣ Create a Target Group
+3] Start and enable Nginx :-
 ```
-Navigate to EC2 → Target Groups → Create target group.
-Choose Instances as target type.
-Name it My-TG.
-Protocol: HTTP, Port: 80
-Register your running EC2 instances under this Target Group.
+sudo systemctl start nginx
+sudo systemctl enable nginx
 ```
-### 6️⃣ Create an Application Load Balancer (ALB)
+4] Check Nginx status :-
 ```
-Go to Load Balancers → Create Load Balancer → Application Load Balancer.
-Choose Internet-facing and select at least two Availability Zones.
-Create or select a Security Group that allows HTTP (port 80).
-Attach the Target Group you created earlier.
-Once created, note the DNS name of the ALB.
+sudo systemctl status nginx
 ```
-### 7️⃣ Test Manual Scaling
+5] Create HTML page :-
 ```
-Open the ALB DNS name in your browser.
-Refresh the page multiple times — you’ll see responses from different EC2 instances (Instance 1, 2, etc.).
-This confirms traffic load balancing.
-You can manually add or remove instances in the Target Group to scale up or down.
+echo "<h1>Welcome to Auto-Scaling Server 1....!</h1>" | sudo tee /usr/share/nginx/html/index.html
 ```
-## 🧠 Key Learnings
+6] Connect to EC2 via SSH :-
+```
+ssh -i your-key.pem ubuntu@ec2-public-ip
+```
+7] Check Ubuntu version :-
+```
+lsb_release -a
+```
+8] Terminate instances (after testing) :-
+```
+aws ec2 terminate-instances --instance-ids <instance-id>
+```
+## 📋 Deployment Checklist :-
+
+ Base EC2 launched and Nginx installed
+
+ Custom AMI created
+
+ Additional EC2 instances launched from AMI
+
+ Target Group created and instances registered
+
+ Application Load Balancer configured
+
+ ALB tested for manual scaling and traffic distribution
+
+ Security groups verified
+
+ Extra instances terminated to avoid costs
+
+## 🧠 Key Learnings :-
 
 ✅ How to manually scale EC2 instances using a custom AMI
 
@@ -107,23 +170,36 @@ You can manually add or remove instances in the Target Group to scale up or down
 
 ✅ How to test and verify traffic distribution
 
-## 📸 Folder Structure
-```
+## 🖥️ Future Enhancements :-
+
+Automate scaling with AWS Auto Scaling Groups
+
+Add HTTPS/SSL support on ALB
+
+Integrate CloudWatch for monitoring traffic and performance
+
+Deploy a dynamic web app instead of static HTML
+
+Add multi-region deployment for global availability
+
+## 📸 Folder Structure :-
+``` 
 manual-scaling-project/
 │
 ├── index.html        # Nginx page for instance 1
-├── images/            # Screenshots for setup
-└── README.md          # Project documentation
+├── images/           # Screenshots for setup
+└── README.md         # Project documentation
 ```
-## 🔒 Security Tips
 
-Restrict SSH access to your IP only.
+## 🔒 Security Tips :-
 
-Use separate security groups for ALB and EC2.
+Restrict SSH access to your IP only
 
-Terminate extra instances after testing to avoid extra costs.
+Use separate security groups for ALB and EC2
 
-## 🧩 Use Cases
+Terminate extra instances after testing to avoid extra costs
+
+## 🧩 Use Cases :-
 
 AWS Learning and Practice Project
 
@@ -131,14 +207,12 @@ Demonstration of Manual Scaling Concept
 
 Portfolio or Resume Project for Cloud/DevOps Roles
 
-## 🧑‍💻 Author
+## 🧑‍💻 Author :-
 
 Prasad
 
 📘 Project Type: AWS Cloud | Manual Scaling Architecture
-
 🗓️ Version: 1.0
-
 📜 License: MIT
 
 ## 📩 Connect With Me

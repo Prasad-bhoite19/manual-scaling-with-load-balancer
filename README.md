@@ -232,7 +232,7 @@ Below are some important screenshots of the project:
 
 | My-AMI | Load-Balancer |
 |------------------|-------------------|
-| <img src="Images/AMI.png" width="200px"> | <img src="Images/Load Balancer.png" width="200px">
+| <img src="Images/AMI.png" width="500px"> | <img src="Images/Load Balancer.png" width="200px">
 | Instance | Target-Group |
 | <img src="Images/My Servers.png" width="200px"> | <img src="Images/Targate Group.png" width="200px">
 

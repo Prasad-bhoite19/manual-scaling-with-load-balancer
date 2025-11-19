@@ -237,7 +237,10 @@ Below are some important screenshots of the project:
 | <img src="Images/My Servers.png" width="400px"> | <img src="Images/Targate Group.png" width="400px">
 
 ### 🎥 Output Video
+
 <video src="./Images/Result OF ALB.mp4" width="600" controls></video>
+
+
 
 > 📝 *Tip:* Create a folder named **`Images/`** in your repo and upload all your images there.  
 

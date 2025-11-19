@@ -197,7 +197,8 @@ Below are some important screenshots of the project:
 
 
 ### 🎥 Output Video
-[▶ Click here to watch the output video](./Images/Result OF ALB.mp4)
+[▶ Click here to watch the output video](./Images/Result-OF-ALB.mp4)
+
 
 
 

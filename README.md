@@ -41,17 +41,11 @@ The Load Balancer routes traffic between them for better performance and reliabi
 ### 1️⃣ Launch Base EC2 Instance :-
 
 - ***Go to AWS EC2 Console → Launch an instance.***
-
 - ***Choose Amazon Ubuntu 2 AMI.***
-
 - ***Select instance type (e.g., t2.micro).***
-
 - ***Configure security group:***
-
 - ***Inbound: HTTP (80), SSH (22)***
-
 - ***Outbound: All traffic***
-
 - ***Launch and connect via SSH.***
 
 ### 2️⃣ Install and Configure Nginx :-

@@ -226,6 +226,22 @@ manual-scaling-project/
 
 - Portfolio or Resume Project for Cloud/DevOps Roles
 
+## 📸 Screenshots
+
+Below are some important screenshots of the project:
+
+| Screenshot | Description |
+|-----------|-------------|
+| <img src="AMI.png" width="450"> | **AMI** |
+| <img src="Load Balancer.png" width="450"> | **Load-Balancer** |
+| <img src="My Servers.png" width="450"> | **Instance** |
+| <img src="Result OF ALB.mp4" width="450"> | **Output** |
+| <img src="Targate Group.png" width="450"> | **Targate-Group** |
+
+
+> 📝 *Tip:* Create a folder named **`Images/`** in your repo and upload all your images there.  
+
+
 ## 🧑‍💻 Author :-
 
 Prasad

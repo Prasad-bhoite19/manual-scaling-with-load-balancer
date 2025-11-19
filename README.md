@@ -232,9 +232,9 @@ Below are some important screenshots of the project:
 
 | My-AMI | Load-Balancer |
 |------------------|-------------------|
-| <img src="Images/AMI.png" width="500px"> | <img src="Images/Load Balancer.png" width="200px">
+| <img src="Images/AMI.png" width="400px"> | <img src="Images/Load Balancer.png" width="400px">
 | Instance | Target-Group |
-| <img src="Images/My Servers.png" width="200px"> | <img src="Images/Targate Group.png" width="200px">
+| <img src="Images/My Servers.png" width="400px"> | <img src="Images/Targate Group.png" width="400px">
 
 ### 🎥 Output Video
 <video src="./Images/Result OF ALB.mp4" width="600" controls></video>

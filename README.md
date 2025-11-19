@@ -84,7 +84,7 @@ Check your instance public IP in the browser — you should see the message abov
 
 - ***Update the Nginx message on each to differentiate them:***
 
-- ***echo <h1>Welcome to Auto-Scaling Server 2....!</h1> | sudo nano /var/www/html/index.html***
+- ***echo h1>Welcome to Auto-Scaling Server 2....!</h1 | sudo nano /var/www/html/index.html***
   
 
 

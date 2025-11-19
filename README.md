@@ -40,19 +40,19 @@ The Load Balancer routes traffic between them for better performance and reliabi
 
 ### 1️⃣ Launch Base EC2 Instance :-
 
-***Go to AWS EC2 Console → Launch an instance.***
+- ***Go to AWS EC2 Console → Launch an instance.***
 
-***Choose Amazon Ubuntu 2 AMI.***
+- ***Choose Amazon Ubuntu 2 AMI.***
 
-***Select instance type (e.g., t2.micro).***
+- ***Select instance type (e.g., t2.micro).***
 
-***Configure security group:***
+- ***Configure security group:***
 
-***Inbound: HTTP (80), SSH (22)***
+- ***Inbound: HTTP (80), SSH (22)***
 
-***Outbound: All traffic***
+- ***Outbound: All traffic***
 
-***Launch and connect via SSH.***
+- ***Launch and connect via SSH.***
 
 ### 2️⃣ Install and Configure Nginx :-
 ```
@@ -66,61 +66,61 @@ Check your instance public IP in the browser — you should see the message abov
 ```
 ### 3️⃣ Create a Custom AMI :-
 
-***Once your base instance is ready:***
+- ***Once your base instance is ready:***
 
-***Go to EC2 → Instances → Select instance → Actions → Image → Create Image.***
+- ***Go to EC2 → Instances → Select instance → Actions → Image → Create Image.***
 
-***Give a name (e.g., My-AMI).***
+- ***Give a name (e.g., My-AMI).***
 
-***Wait for the AMI to be created (check under AMIs in the console).***
+- ***Wait for the AMI to be created (check under AMIs in the console).***
 
-***This AMI will be used to quickly launch multiple identical EC2 instances.***
+- ***This AMI will be used to quickly launch multiple identical EC2 instances.***
 
 ### 4️⃣ Launch More Instances from AMI :-
 
-***Go to AMIs → Select your AMI → Click Launch instance from image.***
+- ***Go to AMIs → Select your AMI → Click Launch instance from image.***
 
-***Create 2–3 instances from the same AMI.***
+- ***Create 2–3 instances from the same AMI.***
 
-***Update the Nginx message on each to differentiate them:***
+- ***Update the Nginx message on each to differentiate them:***
 
-***echo "<h1>Welcome to Auto-Scaling Server 2....!</h1>" | sudo nano /var/www/html/index.html***
+- ***echo "<h1>Welcome to Auto-Scaling Server 2....!</h1>" | sudo nano /var/www/html/index.html***
 
 
 ### 5️⃣ Create a Target Group :-
 
-***Navigate to EC2 → Target Groups → Create target group.***
+- ***Navigate to EC2 → Target Groups → Create target group.***
 
-***Choose Instances as target type.***
+- ***Choose Instances as target type.***
 
-***Name it My-TG.***
+- ***Name it My-TG.***
 
-***Protocol: HTTP, Port: 80***
+- ***Protocol: HTTP, Port: 80***
 
-***Register your running EC2 instances under this Target Group.***
+- ***Register your running EC2 instances under this Target Group.***
 
 
 ### 6️⃣ Create an Application Load Balancer (ALB) :-
 
-***Go to Load Balancers → Create Load Balancer → Application Load Balancer.***
+- ***Go to Load Balancers → Create Load Balancer → Application Load Balancer.***
 
-***Choose Internet-facing and select at least two Availability Zones.***
+- ***Choose Internet-facing and select at least two Availability Zones.***
 
-***Create or select a Security Group that allows HTTP (port 80).***
+- ***Create or select a Security Group that allows HTTP (port 80).***
 
-***Attach the Target Group you created earlier.***
+- ***Attach the Target Group you created earlier.***
 
-***Once created, note the DNS name of the ALB.***
+- ***Once created, note the DNS name of the ALB.***
 
 ### 7️⃣ Test Manual Scaling :-
 
-***Open the ALB DNS name in your browser.***
+- ***Open the ALB DNS name in your browser.***
 
-***Refresh the page multiple times — you’ll see responses from different EC2 instances (Instance 1, 2, etc.).***
+- ***Refresh the page multiple times — you’ll see responses from different EC2 instances (Instance 1, 2, etc.).***
 
-***This confirms traffic load balancing.***
+- ***This confirms traffic load balancing.***
 
-***You can manually add or remove instances in the Target Group to scale up or down.***
+- ***You can manually add or remove instances in the Target Group to scale up or down.***
 
 ---
 
@@ -162,21 +162,21 @@ aws ec2 terminate-instances --instance-ids <instance-id>
 ```
 ## 📋 Deployment Checklist :-
 
- Base EC2 launched and Nginx installed
+ - Base EC2 launched and Nginx installed
 
- Custom AMI created
+ - Custom AMI created
 
- Additional EC2 instances launched from AMI
+ - Additional EC2 instances launched from AMI
 
- Target Group created and instances registered
+ - Target Group created and instances registered
 
- Application Load Balancer configured
+ - Application Load Balancer configured
 
- ALB tested for manual scaling and traffic distribution
+ - ALB tested for manual scaling and traffic distribution
 
- Security groups verified
+ - Security groups verified
 
- Extra instances terminated to avoid costs
+- Extra instances terminated to avoid costs
 
 ## 🧠 Key Learnings :-
 
@@ -190,15 +190,15 @@ aws ec2 terminate-instances --instance-ids <instance-id>
 
 ## 🖥️ Future Enhancements :-
 
-Automate scaling with AWS Auto Scaling Groups
+- Automate scaling with AWS Auto Scaling Groups
 
-Add HTTPS/SSL support on ALB
+- Add HTTPS/SSL support on ALB
 
-Integrate CloudWatch for monitoring traffic and performance
+- Integrate CloudWatch for monitoring traffic and performance
 
-Deploy a dynamic web app instead of static HTML
+- Deploy a dynamic web app instead of static HTML
 
-Add multi-region deployment for global availability
+- Add multi-region deployment for global availability
 
 ## 📸 Folder Structure :-
 ``` 
@@ -211,19 +211,19 @@ manual-scaling-project/
 
 ## 🔒 Security Tips :-
 
-Restrict SSH access to your IP only
+- Restrict SSH access to your IP only
 
-Use separate security groups for ALB and EC2
+- Use separate security groups for ALB and EC2
 
-Terminate extra instances after testing to avoid extra costs
+- Terminate extra instances after testing to avoid extra costs
 
 ## 🧩 Use Cases :-
 
-AWS Learning and Practice Project
+- AWS Learning and Practice Project
 
-Demonstration of Manual Scaling Concept
+- Demonstration of Manual Scaling Concept
 
-Portfolio or Resume Project for Cloud/DevOps Roles
+- Portfolio or Resume Project for Cloud/DevOps Roles
 
 ## 🧑‍💻 Author :-
 

@@ -185,7 +185,8 @@ manual-scaling-project/
 - Demonstration of Manual Scaling Concept
 - Portfolio or Resume Project for Cloud/DevOps Roles
 
-## 📸 Screenshots
+## 📸 Screenshots :-
+
 
 Below are some important screenshots of the project:
 
@@ -196,7 +197,8 @@ Below are some important screenshots of the project:
 | <img src="Images/My Servers.png" width="400px"> | <img src="Images/Targate Group.png" width="400px">
 
 
-### 🎥 Output Video
+### 🎥 Output Video :-
+
 [▶ Click here to watch the output video](./Images/Result-OF-ALB.mp4)
 
 
@@ -217,7 +219,7 @@ Prasad
 📜 License: MIT
 
 ----
-## 📩 Connect With Me
+## 📩 Connect With Me :-
 
 If you’d like to collaborate, discuss projects, or just say hello — feel free to reach out!  
 

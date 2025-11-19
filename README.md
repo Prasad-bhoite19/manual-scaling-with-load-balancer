@@ -230,12 +230,11 @@ manual-scaling-project/
 
 Below are some important screenshots of the project:
 
-| Screenshot | Description |                                                 
- |-----------|-------------|                                                 
-| <img src="Images/AMI.png" width="250"> |    **AMI**  |                    
-| <img src="Images/Load Balancer.png" width="250"> |   **Load-Balancer**   | | <img src="Images/My Servers.png" width="250"> |   **Instance**   |
-| <img src="Images/My Servers.png" width="250"> |   **Instance**   |
-| <img src="Images/Targate Group.png" width="250"> |   **Targate-Group**   |
+<p align="center">
+  <img src="Images/AMI.png" alt="Screenshot 1" width="45%">
+  <img src="Images/Load Balancer.png" alt="Screenshot 2" width="45%">
+</p>
+
 
 > 📝 *Tip:* Create a folder named **`Images/`** in your repo and upload all your images there.  
 

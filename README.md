@@ -195,14 +195,15 @@ Below are some important screenshots of the project:
 | Instance | Target-Group |
 | <img src="Images/My Servers.png" width="400px"> | <img src="Images/Targate Group.png" width="400px">
 
-### 🎥 Output Video
 
-<video src="./Images/Result OF ALB.mp4" width="600" controls></video>
+### 🎥 Output Video
+[▶ Click here to watch the output video](./Images/Result OF ALB.mp4)
 
 
 
 > 📝 *Tip:* Create a folder named **`Images/`** in your repo and upload all your images there.  
 
+-----
 
 ## 🧑‍💻 Author :-
 
